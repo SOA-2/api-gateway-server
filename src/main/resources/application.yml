@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/neon
+
+  cloud:
+    gateway:
+      routes:
+      - id: movies
+        uri: lb://neon-movie-service
+        predicates:
+        - Path=/movies/**
+  
