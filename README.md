@@ -1,1 +1,1 @@
-# zuul-api-gateway-server
+# api-gateway-server
