@@ -8,6 +8,14 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: reserved
+          uri: http://localhost:8036
+          predicates:
+            - Path=/reserved/**
+        - id: users
+          uri: http://localhost:8037
+          predicates:
+            - Path=/auth/**
         - id: movies
           uri: http://localhost:8039
           predicates:
@@ -16,7 +24,7 @@ spring:
           uri: http://localhost:8039
           predicates:
             - Path=/shows/**
-        - id: users
-          uri: http://localhost:8037
+        - id: seats
+          uri: http://localhost:8039
           predicates:
-            - Path=/auth/**
+            - Path=/seats/**
