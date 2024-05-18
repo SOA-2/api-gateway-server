@@ -19,7 +19,7 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         return http.csrf(ServerHttpSecurity.CsrfSpec::disable)
-        .authorizeExchange(exchange -> exchange.pathMatchers("/eureka/**", "/actuator/**", "/auth")
+        .authorizeExchange(exchange -> exchange.pathMatchers("/eureka/**", "/actuator/**", "/auth/**", "/movies/**", "/shows/**")
                 .permitAll()
                 .anyExchange().authenticated()
         ).oauth2ResourceServer((oauth) -> oauth

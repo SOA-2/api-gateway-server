@@ -12,6 +12,10 @@ spring:
           uri: http://localhost:8039
           predicates:
             - Path=/movies/**
+        - id: shows
+          uri: http://localhost:8039
+          predicates:
+            - Path=/shows/**
         - id: users
           uri: http://localhost:8037
           predicates:
